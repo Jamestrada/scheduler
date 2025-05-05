@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
   validates :publish_at, presence: true
 
   after_initialize do 
-    self.publish_at ||= 1.minutes.from_now
+    self.publish_at ||= 1.hours.from_now
   end
 
   after_save_commit do
@@ -20,7 +20,7 @@ class Tweet < ApplicationRecord
   end
 
   def publish_to_twitter!
-    tweet = twitter_account.client.post("tweets", "{'text':'#{body}'}")
+    tweet = twitter_account.client.post("tweets", "{\"text\":\"#{body}\"}")
     update(tweet_id: tweet["data"]["id"])
   end
 
