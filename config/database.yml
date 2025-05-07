@@ -82,6 +82,7 @@ production:
   primary: &primary_production
     <<: *default
     database: scheduled_tweets_production
+    url: <%= ENV["DATABASE_URL"] %>
     username: scheduled_tweets
     password: <%= ENV["SCHEDULED_TWEETS_DATABASE_PASSWORD"] %>
   cache:
