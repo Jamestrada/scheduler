@@ -68,7 +68,7 @@ gem "omniauth-twitter", "~> 1.4"
 
 gem "twitter", "~> 8.2"
 
-gem "x", "~> 0.15.3"
+gem "x", "~> 0.15.4"
 
 gem "sidekiq", "~> 8.0"
 
