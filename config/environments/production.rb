@@ -87,5 +87,7 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.default_url_options = { host: "scheduler-jamestrada-da69019e2ab6.herokuapp.com" }
   config.active_job.queue_adapter = :sidekiq
 end
